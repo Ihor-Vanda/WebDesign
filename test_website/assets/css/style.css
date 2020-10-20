@@ -1,0 +1,93 @@
+
+.header {
+	font-family: 'Arial';
+	font-size: 28px;
+}
+.center {
+	font-family: 'Arial';
+	font-size: 18px;
+}
+
+.left { 
+	font-family: 'Arial';
+	font-size: 18px;
+}
+ 
+.right { 
+	font-family: 'Arial';
+	font-size: 18px;
+}
+th {
+  color: #fff;
+  background-color: gray;
+}
+
+.ab {
+	font-family: 'Consolas';
+	line-height: 1.5;
+	font-weight: bold;
+	font-size: 28px;
+}
+.lb {
+	line-height: 1.5;
+	font-weight: bolder;
+	font-size: 38px;
+	color: green;
+	text-transform: uppercase;
+}
+.info {
+	line-height: 1.5;
+	font-weight: italic;
+	font-size: 18px;
+	color: gray;
+}
+.lorem {
+	font-family: 'Arial';
+	font-size: 28px;
+	color: purple;
+}
+
+input {
+  outline: none;
+  margin: 0;
+  border: none;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.select {
+	width: 100%;
+	border: none;
+	outline: none;
+}
+
+.row {
+  display: flex;
+}
+
+.row-space {
+  justify-content: space-between;
+}
+.btn {
+  line-height: 20px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.area {
+	border: none;
+	outline: none;
+}
+.datastyle {
+	width: 100%;
+}
+
+
+
+	
+
+
+
