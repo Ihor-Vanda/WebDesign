@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Paint</title>
+   <link rel="stylesheet" href="assets/css/layout.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   
+</head>
+<body>
+	<header class="header"><p>Header...</p></header>
+	<div class="container">
+	   <main class="center column">
+		   <article>
+				<h1>Paint</h1>
+				<canvas class="can" id="draw" width="800" height="400"></canvas>
+				<p>
+					<button onclick="clearCanvas()">Clear</button>
+					<label>Color</label>
+					<select name="color" id="color" value="#df4b26">
+						<option selected="selected" value="#df4b26">Red</option>
+						<option value="#000">Black</option>
+						<option value="#fff">White</option>
+						<option value="green">Green</option>
+					</select>
+					<label>Line Width</label>
+					<select name="lWidth" id="lWidth" value="5">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option selected="selected" value="5">5</option>
+					</select>
+				</p>
+			</article>
+	   </main>
+	   <nav class="left column">
+		   <h3>Left heading</h3>
+		   <ul>
+				<li><a href="index.html">Home</a></li>
+				   <li><a href="contact.html">Contact</a></li>
+				</ul>
+				<h3>Left heading</h3>
+				<ul>
+					<li><a href="slider.html">Slider</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="media.html">Media</a></li>
+					<li><a href="table.html">Table</a></li>
+				</ul>
+	   </nav>
+	   <div class="right column">
+		   <h3>Right heading</h3>
+		   <p></p>
+	   </div>
+	</div>
+	<div class="footer-wrapper">
+	   <footer class="footer"><p>Footer...</p></footer>
+	</div>
+	
+	<script src="assets/js/paint.js"></script>
+</body>
+</html>
