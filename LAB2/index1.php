@@ -1,29 +1,4 @@
 
-<?php
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$database = "lab2"; //повинна бути створена в субд
-
-		// Устанавливаем соединение
-		$conn = mysqli_connect($servername, $username, $password, $database);
-		// Проверяем соединение
-		if (!$conn) {
-			  die("Connection failed: " . mysqli_connect_error());
-		}
-		
-		$first_name = $_POST["firstname"];
-		$last_name = $_POST["lastname"];
-		$password = $_POST["password"];
-		$role_id = 1;
-		 
-		$sql = "INSERT INTO users (first_name, last_name, password, role_id) VALUES ($first_name, $last_name, $password, $role_id)";
-		if (!mysqli_query($conn, $sql)) {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-		}
-		mysqli_close($conn);
-	?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,7 +8,23 @@
 </head>
 <body>
 	<header class="header">Таблица пользователей</header>
-	<h3><img src="assets/img/logo.png" alt="" align="middle"><table><td align="left">TABLE</td><td align="right">SIG IN</td>|<td>SIG UP</td></table></h3>
+	<h3><img src="assets/img/logo.png" alt="" align="middle"><a class="homepage" href="index1.php">TABLE</a></h3>
+	<a class="open-button1" href="sign_up.php">Sign Up</a>
+	<button class="open-button2" onclick="openForm()">Sign In</button>
+	
+	<div class="form-popup" id="myForm">
+		<form action="index1.php" class="form-container" method="post">
+			<h1>SIGN IN</h1>
+			<label for="firsrname"><b>First Name</b></label>
+			<input type="text" placeholder="Your first name" name="firstname" required>
+			<label for="lastname"><b>Last Name</b></label>
+			<input type="text" placeholder="Your last name" name="lastname" required>
+			<label for="password"><b>Password</b></label>
+			<input type="password" placeholder="Your password" name="password" minlength="6" required>
+			<button type="submit" class="btn">Sign In</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</form>
+	</div>
 	
 	
 	<div class="container">
@@ -51,7 +42,7 @@
 				die("Connection failed: " . $conn->connect_error);
 			}
 			
-			echo "<table border='1' width = 100% cellspacing= '0' cellpadding= '0'>
+			echo "<table cellspacing= '0'cellpadding= '0' border= '1' width='100%' >
 			<tr><th>#</th><th>First name</th><th>Last name</th><th>Role</th></tr>";
 			
 			$sql = "SELECT first_name, last_name FROM users";
@@ -76,5 +67,7 @@
 			echo "</table>";
 		?>
 	</div>
+	
+	<script src="assets/js/sign_in.js"></script>
 </body>
 </html>

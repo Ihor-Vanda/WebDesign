@@ -2,7 +2,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$database = "testdb";
+	$database = "lab2";
 
 	// Устанавливаем соединение
 	$conn = mysqli_connect($servername, $username, $password, $database);
@@ -14,18 +14,16 @@
 	$first_name = $_POST["firstname"];
 	$last_name = $_POST["lastname"];
 	$password = $_POST["password"];
-	$login = $_POST["login"];
-	if($_POST["role"] == "admin") {
-		$id_role = 1;
+	if($_POST["role"] == "Admin") {
+		$role_id = 1;
 	} else {
-		$id_role = 2;
+		$role_id = 2;
 	}
-		 
-	$sql = "INSERT INTO `users` (`first_name`, `last_name`, `password`, `login`, `id_role`) 
-	VALUES ('$first_name', '$last_name', '$password', '$login', '$id_role')";
+	$sql = "INSERT INTO `users` (`first_name`, `last_name`, `password`, `role_id`) 
+	VALUES ('$first_name', '$last_name', '$password', '$role_id')";
 	if (!mysqli_query($conn, $sql)) {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	mysqli_close($conn);
-	header('Location: login.php');
+	header('Location: index1.php');
 ?>

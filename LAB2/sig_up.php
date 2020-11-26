@@ -7,37 +7,22 @@
 </head>
 <body style="padding-top: 3rem;">
 <header class="header">Sing Up</header>
-<h3><img src="assets/img/logo.png" alt="" align="middle">TABLE</h3>
+<h3><img src="assets/img/logo.png" alt="" align="middle"><a class="homepage" href="index1.php">TABLE</a></h3>
 
-<div class="container">
-
-	<form action="index1.php" id="sigup" method="post">
-						
-		<div class="inputgroup">
-			<input type="text" name="firstname" id="firstname" placeholder="First name*" required size="60">
-		</div>
-		<div class="inputgroup">
-			<input type="text" placeholder="Last name*" required name="lastname" id="lastname" size="60">
-		</div>
-									
-		<div class="input-group">
-			<p>Select role:
-				<select class="select" required name="role">
-				<option>Student</option>
-				<option>Teachear</option>
-				<option>Admin</option>
-				</select></p>
-		</div>
-		<div class="inputgroup">
-			<input type="password" name="password" placeholder="Password*" required id="password" minlengh="6" size="60">
-		</div>
-		<div class="inputgroup">
-			<input type="password" placeholder="Confirm Password*" required id="confirmpassword" minlengh="6" size="60">
-		</div>
+	<div class="form-popup" id="myForm">
+		<form action="add_user.php" id="signup" method="post">
+			<h1>SIGN IN</h1>
+			<label for="firsrname"><b>First Name</b></label>
+			<input type="text" placeholder="Your first name" name="firstname" required>
+			<label for="lastname"><b>Last Name</b></label>
+			<input type="text" placeholder="Your last name" name="lastname" required>
+			<label for="password"><b>Password</b></label>
+			<input type="password" placeholder="Your password" name="password" minlength="6" required>
+			<button type="submit" class="btn">Sign In</button>
 		<button class="btn" type="submit">Sign Up</button>
 	</form>
-	
-</div>
+	</div>
+
 
 </body>
 </html>

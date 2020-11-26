@@ -7,14 +7,27 @@
 
 .container {
 	padding: 50px;
-	padding-left: 20%;
-	padding-right: 100px;
+	padding-left: 15%;
+	padding-right: 15%;
 }
 
 .h3 {
 	padding: 20px;
 	font-style: bold;
 	font-size: 16pt;
+}
+
+.table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.homepage {
+	display: inline-block;
+    padding: 0.7rem 1rem; 
+    text-decoration: none; 
+	cursor: pointer;
+	color: black;
 }
 
 input {
@@ -39,4 +52,88 @@ p {
 	padding: 0 10px;
 	background: #BCCE98;
 	cursor: pointer;
+}
+
+.open-button1 {
+	background-color: #2196F3;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 84%;
+	right: 44px;
+	width: 50px;
+	display: inline-block;
+    padding: 1rem 1.5rem; 
+    text-decoration: none; 
+    border-radius: 3px; 
+}
+.open-button2 {
+	background-color: #2196F3;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 84%;
+	right: 150px;
+	width: 90px;
+	border-radius: 3px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  background-color: white;
+  right: 10%;
+}
+
+.form-container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #1976D2;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 49%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.form-container .cancel {
+  background-color: #448AFF;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
