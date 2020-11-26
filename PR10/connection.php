@@ -5,7 +5,6 @@
 	$password = "";
 	$database = "testdb";
 
-	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	// Устанавливаем соединение
 	$conn = mysqli_connect($servername, $username, $password, $database);
 	// Проверяем соединение
