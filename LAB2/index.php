@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header class="header">ТАБЛИЦА ПОЛЬЗОВАТЕЛЕЙ</header>
-	<h3><img src="assets/img/logo.png" alt="" align="middle"><a class="homepage" href="index1.php">TABLE</a></h3>
+	<h3><img src="assets/img/logo.png" alt="" align="middle"><a class="homepage" href="index.php">TABLE</a></h3>
 	<?php
 		if($_SESSION['first_name']) {
 			$first_name = $_SESSION['first_name'];
@@ -61,6 +61,9 @@
                 echo '</tr>';
             }
 			echo "</table>";
+			if ($_SESSION["id"] == 1) {
+				echo '<p><a class= "btn" href= "sign_up.php">Add User</a></p>';
+			}
 		?>
 	</div>
 	

@@ -1,29 +1,29 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "lab2";
+	
+	session_start();
+	
+	require_once 'conn.php';
 
-	// Устанавливаем соединение
-	$conn = mysqli_connect($servername, $username, $password, $database);
-	// Проверяем соединение
-	if (!$conn) {
-			 die("Connection failed: " . mysqli_connect_error());
-	}
-		
 	$first_name = $_POST["firstname"];
 	$last_name = $_POST["lastname"];
 	$password = $_POST["password"];
+	$confpassword = $_POST["confpassword"];
+	$email = $_POST["email"];
 	if($_POST["role"] == "Admin") {
 		$role_id = 1;
 	} else {
 		$role_id = 2;
 	}
-	$sql = "INSERT INTO `users` (`first_name`, `last_name`, `password`, `role_id`) 
-	VALUES ('$first_name', '$last_name', '$password', '$role_id')";
-	if (!mysqli_query($conn, $sql)) {
-		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	if ($password === $confpassword) {
+		$sql = "INSERT INTO `users` (`first_name`, `last_name`, `password`, `email`, `role_id`) 
+		VALUES ('$first_name', '$last_name', '$password', '$email', '$role_id')";
+		if (!mysqli_query($conn, $sql)) {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+		mysqli_close($conn);
+		header('Location: index.php');
+	} else {
+		$_SESSION["message"] = "Пароли не совпадают!";
+		header('Location: sign_up.php');
 	}
-	mysqli_close($conn);
-	header('Location: index1.php');
 ?>
