@@ -2,6 +2,7 @@
 <?php
 	session_start();
 	require_once 'conn.php';
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	
 	if(isset($_GET["id"])) {
 		$id = $_GET["id"];
@@ -35,18 +36,20 @@
 	<h3><img src="assets/img/logo.png" alt="" align="middle"><a class="homepage" href="index.php">TABLE</a></h3>
 	<div class= "container">
 		<div class="form-container">
-			<table cellspacing= "0" cellpadding= "0"><tr><td widht= "20%" align= "left">
+			<table cellspacing= "20px" cellpadding= "0"><tr><td widht= "20%" align= "left">
 				<?php
 					if ($photo) {
 						echo '<br></br><img src='.$photo.' width="170" height="235" alt="">';
 					}
-					echo "<form action='upload_image.php' method='post' enctype='multipart/form-data'>
-					<input type='hidden' value='$id' name='id' readonly>
-					<input type='file' name='fileToUpload' id='fileToUpload'>
-					<input class='btn' type='submit' value='Upload Image' name='submit'>
-					</form></td><td>";
+					if($_SESSION["id"] && $_SESSION["id"] == $_GET["id"]) {
+						echo "<form action='upload_image.php' method='post' enctype='multipart/form-data'>
+						<input type='hidden' value='$id' name='id' readonly>
+						<input type='file' name='fileToUpload' id='fileToUpload'>
+						<input class='btn' type='submit' value='Upload Image' name='submit'>
+						</form>";
+					}
+					echo "</td><td>";
 						echo "<form action='update.php' id='update' method='post'>";
-							
 						if ($_SESSION['role_id'] == 1) {
 							echo "<input type='hidden' value='$id' name='id' readonly>
 							<input type='text' value='$first_name' name='first_name' required>
@@ -68,7 +71,7 @@
 							echo "<button class='btn' type='submit'>Edit</button>";
 							echo "<a class= 'btn delete' href='delete_user.php?id=",$row["id"],"'>Delete</a>";
 							
-						} else if ($_SESSION['role_id'] == 2) {
+						} else if ($_SESSION['role_id'] == 2 && $_SESSION['id'] == $_GET['id']) {
 							echo "<input type='hidden' value='$id' name='id' readonly>
 							<input type='text' value='$first_name' name='first_name' required>
 							<input type='text' value='$last_name' name='last_name' required>
