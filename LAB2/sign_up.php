@@ -8,7 +8,7 @@
    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<header class="header">РЕГИСТРАЦИЯ</header>
+	<header class="header">РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ</header>
 	<h3><img src="assets/img/logo.png" alt="" align="middle"><a class="homepage" href="index.php">TABLE</a></h3>
 
 	<div class="container">

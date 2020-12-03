@@ -12,11 +12,9 @@
 	if (is_array($row)) {
 		$_SESSION['id'] = $row['id'];
 		$_SESSION['first_name'] = $row['first_name'];
-		$_SESSION['last_name'] = $row['last_name'];
-		$_SESSION['password'] = $row['password'];
 		$_SESSION['role_id'] = $row['role_id'];
 	} else {
-		echo 'Invalid password';
+		$_SESSION['message'] = "Invalid password";
 	}
 	header('Location: index.php');
 ?>

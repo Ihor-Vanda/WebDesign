@@ -48,5 +48,5 @@
 			echo "Sorry, there was an error uploading your file.";
 		}
 	}
-	header("Location: user_page.php");
+	header("Location: user_page.php?id=".$_POST['id']."");
 ?>

@@ -41,7 +41,7 @@
 					if ($photo) {
 						echo '<br></br><img src='.$photo.' width="170" height="235" alt="">';
 					}
-					if($_SESSION["id"] && $_SESSION["id"] == $_GET["id"]) {
+					if ($_SESSION["id"] == $_GET["id"] || $_SESSION['role_id'] == 1) {
 						echo "<form action='upload_image.php' method='post' enctype='multipart/form-data'>
 						<input type='hidden' value='$id' name='id' readonly>
 						<input type='file' name='fileToUpload' id='fileToUpload'>
@@ -69,9 +69,9 @@
 								
 							echo "<input type='text' value='$password' name='password' minlength='6' required>";
 							echo "<button class='btn' type='submit'>Edit</button>";
-							echo "<a class= 'btn delete' href='delete_user.php?id=",$row["id"],"'>Delete</a>";
+							echo "<a class= 'btn-delete' href='delete_user.php?id=",$row["id"],"'>Delete</a>";
 							
-						} else if ($_SESSION['role_id'] == 2 && $_SESSION['id'] == $_GET['id']) {
+						} else if ($_SESSION['id'] == $_GET['id']) {
 							echo "<input type='hidden' value='$id' name='id' readonly>
 							<input type='text' value='$first_name' name='first_name' required>
 							<input type='text' value='$last_name' name='last_name' required>
@@ -82,7 +82,7 @@
 								<option>User</option>
 								<option>Admin</option>
 								</select></p>";
-							echo "<input type='password' value='$password' name='password' minlength='6' required>";
+							echo "<input type='text' value='$password' name='password' minlength='6' required>";
 							echo "<button class='btn' type='submit'>Edit</button>";
 								
 						} else {

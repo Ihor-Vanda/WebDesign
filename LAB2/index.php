@@ -21,12 +21,15 @@
 			echo "<a class='button1' href='sign_up.php'>Sign Up</a>
 			<a class='button2' onclick='openForm()'>Sign In</a>";
 		}
-	
 	?>
 	
 	<div class="form-popup" id="myForm">
 		<form action="sign_in.php" class="form-container" method="post">
 			<h1>SIGN IN</h1>
+			<?php if ($_SESSION["message"]) {
+				echo"<p>" .$_SESSION["message"]. "</p>";
+				unset($_SESSION["message"]);
+			}?>
 			<label for="email"><b>Email</b></label>
 			<input type="email" placeholder="Your email" name="email" required>
 			<label for="password"><b>Password</b></label>
