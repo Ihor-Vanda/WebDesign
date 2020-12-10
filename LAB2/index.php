@@ -47,20 +47,22 @@
 			echo "<table cellspacing= '0'cellpadding= '0' border= '1' width='100%' >
 			<tr><th>#</th><th>First name</th><th>Last name</th><th>Email</th><th>Role</th></tr>";
 			
-			$res = mysqli_query($conn, "SELECT * FROM `users` LIMIT 10");
+			$res = mysqli_query($conn, "SELECT * FROM `users` JOIN `role` WHERE users.role_id = role.role_id");
+
+			if (!$res) {
+				printf("Error: %s\n", mysqli_error($conn));
+				exit();
+			}
 
             while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
-            
+				
                 echo '<tr>';
                     echo '<td><a class= "user-id" href="user_page.php?id=',$row['id'],'">',$row['id'],'</a></td>';
+					echo'<td><img src="'.$row['photo'].'" height="240" alt=""></td>';
                     echo '<td>'.$row['first_name'].'</td>';
                     echo '<td>'.$row['last_name'].'</td>';
                     echo '<td>'.$row['email'].'</td>';
-                    if($row['role_id'] == 1){
-                        echo '<td>Admin</td>';
-                    }else{
-                        echo '<td>User</td>';
-                    }
+					echo '<td>'.$row['title'].'</td>'; 
                 echo '</tr>';
             }
 			echo "</table>";
